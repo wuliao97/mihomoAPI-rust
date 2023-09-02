@@ -16,8 +16,29 @@ tokio = {version= "1.29.1", features=["full"]}
 
 <h1 align="left">Sample Code</h1>
 
-```rust
+<p align="left">Cargo.tomi</p>
 
 ```
+mihomo_api = { git = "https://github.com/wuliao97/mihomoAPI-rust" }
+tokio = {version= "1.29.1", features=["full"]}
+```
 
-<p>※ code later</p>
+<p align="left">main.rs</p>
+
+```rust
+extern crate mihomo_api;
+
+use crate::mihomo_api::model::{
+    client::Client,
+    json::Base
+};
+
+#[tokio::main]
+async fn main() {
+    let id: String = String::from("801671759");
+    let client: Client = Client::default(id);
+    let result: Base = client.get_user().await.unwrap();
+
+    println!("{:?}", result);
+}
+```

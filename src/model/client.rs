@@ -37,6 +37,7 @@ impl Client {
             .text()
             .await
             .unwrap()
+            .clone()
         )
     }
 
