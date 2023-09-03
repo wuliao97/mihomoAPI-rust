@@ -1,6 +1,6 @@
 <div align="center">
     <h1>Mihomo API with Rust</h1>
-    <p align="right">version. 0.1.0</p>
+    <p align="right">version. 0.1.1</p>
 </div>
 
 
@@ -60,5 +60,4 @@ async fn main() {
         achievement_count: 245,
     },
 }
-
 ```

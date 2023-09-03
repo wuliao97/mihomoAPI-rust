@@ -48,3 +48,7 @@ impl Client {
     }
 }
 
+
+pub fn get_image(id: String) -> String {
+    format!("https://raw.githubusercontent.com/Mar-7th/StarRailRes/master/{}", id)
+}
