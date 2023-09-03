@@ -4,26 +4,16 @@
 </div>
 
 
-<h1 align="left">Requirements</h1>
+### Sample Code
 
-
-```
-serde = { version = "1.0.182", features = ["derive"] }
-serde_json = "1.0.104"
-reqwest = "0.11.18"
-tokio = {version= "1.29.1", features=["full"]}
-```
-
-<h1 align="left">Sample Code</h1>
-
-<p align="left">Cargo.tomi</p>
+`Cargo.tomi`
 
 ```
 mihomo_api = { git = "https://github.com/wuliao97/mihomoAPI-rust" }
 tokio = {version= "1.29.1", features=["full"]}
 ```
 
-<p align="left">main.rs</p>
+`main.rs`
 
 ```rust
 extern crate mihomo_api;
@@ -39,6 +29,36 @@ async fn main() {
     let client: Client = Client::default(id);
     let result: Base = client.get_user().await.unwrap();
 
-    println!("{:?}", result);
+    dbg!(result.player);
 }
+```
+
+### Output
+```json
+[src\main.rs:14] result.player = Player {       
+    uid: "801671759",
+    nickname: "Ennui",
+    level: 69,
+    world_level: 6,
+    friend_count: 37,
+    avatar: Avatar {
+        id: "200101",
+        name: "三月なのか・歓迎",
+        icon: "icon/avatar/200101.png",
+    },
+    signature: "入って！ discord.gg/starrailjp",
+    is_display: Bool(true),
+    space_info: SpaceInfo {
+        challenge_data: ChallengeData {
+            maze_group_id: 10,
+            maze_group_index: 21,
+            pre_maze_group_index: 115,
+        },
+        pass_area_progress: 7,
+        light_cone_count: 76,
+        avatar_count: 30,
+        achievement_count: 245,
+    },
+}
+
 ```
