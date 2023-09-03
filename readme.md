@@ -34,7 +34,7 @@ async fn main() {
 ```
 
 ### Output
-```json
+```
 [src\main.rs:14] result.player = Player {       
     uid: "801671759",
     nickname: "Ennui",
